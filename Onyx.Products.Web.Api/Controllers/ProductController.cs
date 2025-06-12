@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Onyx.Products.Web.Api.Data;
 using Onyx.Products.Web.Api.Domain;
@@ -7,6 +8,7 @@ namespace Onyx.Products.Web.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class ProductController(
         IProductsRepository repo,
         ILogger<ProductController> logger) : ControllerBase
